@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-tabs button {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #64748b;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.nav-tabs button.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+}
+
+.nav-tabs button:hover {
+    color: #0f172a;
+}
+
+main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.stat-card.high .stat-value {
+    color: #dc2626;
+}
+
+.stat-card.moderate .stat-value {
+    color: #ea580c;
+}
+
+.stat-card.online .stat-value {
+    color: #16a34a;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+#map {
+    height: 500px;
+    border-radius: 0.5rem;
+    background: #e2e8f0;
+}
+
+.details-panel {
+    position: sticky;
+    top: 100px;
+}
+
+.detail-item {
+    margin-bottom: 1.5rem;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.detail-value.large {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.detail-box {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+}
+
+tr:hover {
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+.magnitude-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.magnitude-7 { background: #7f1d1d; color: white; }
+.magnitude-6 { background: #dc2626; color: white; }
+.magnitude-5 { background: #ea580c; color: white; }
+.magnitude-4 { background: #ca8a04; color: white; }
+.magnitude-low { background: #16a34a; color: white; }
+
+.btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #64748b;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #64748b;
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.info-box {
+    background: #dbeafe;
+    border-left: 4px solid #2563eb;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.info-box.warning {
+    background: #fef3c7;
+    border-left-color: #ca8a04;
+}
+
+.info-box.danger {
+    background: #fee2e2;
+    border-left-color: #dc2626;
+}
+
+.project-info {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-info h3 {
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.project-info ul {
+    list-style: none;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.project-info li {
+    padding: 0.25rem 0;
+}
+
+.project-info li:before {
+    content: "• ";
+    color: #2563eb;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-tabs {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    .details-panel {
+        position: static;
+    }
+}
+
